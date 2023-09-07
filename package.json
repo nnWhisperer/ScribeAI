@@ -2,20 +2,17 @@
 	"name": "scribeai",
 	"displayName": "ChatGPT & GPT extension - ScribeAI",
 	"description": "🚀 Use ChatGPT & GPT right inside VSCode to enhance and automate your coding with AI-powered assistance",
-	"version": "1.2.1",
-	"publisher": "AndrewZhang",
+	"version": "1.2.3",
+	"publisher": "nnWhisperer",
 	"private": true,
 	"icon": "resources/chatbot.png",
 	"license": "Apache-2.0",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ajikan/ScribeAI"
+		"url": "https://github.com/nnWhisperer/ScribeAI"
 	},
 	"engines": {
 		"vscode": "^1.65.0"
-	},
-	"sponsor": {
-		"url": "https://ko-fi.com/pixelperfectlabs"
 	},
 	"categories": [
 		"Programming Languages",
