@@ -58,7 +58,7 @@ Scribe AI is a ChatGPT-like extension for VS Code. Now you can have an AI chatbo
 
 # 🌟 Preview
 <p align="center">
-  <img src="./previewDemo.gif" />
+  <img src="./resources/previewDemo.gif" />
 </p>
 
 &nbsp;
@@ -134,7 +134,7 @@ Scribe AI is a ChatGPT-like extension for VS Code. Now you can have an AI chatbo
 
 - When you first use ScribeAI whether by `Ask AI` or `AI Edit`, it will ask you for your OpenAI API key. This is used by the extension to access the API and is only sent to OpenAI.
 <p align="center">
-  <img src="./apiKeyInput.png" />
+  <img src="./resources/apiKeyInput.png" />
 </p>
 
 ### 📑 Download and install `.vsix` file from Releases.
@@ -152,7 +152,7 @@ Scribe AI is a ChatGPT-like extension for VS Code. Now you can have an AI chatbo
 ## ⚙️ Settings
 - You can also change your API key in User Settings via `Code` -> `Preferences` -> `Settings` and under `Extensions` you will find `ScribeAI` settings. Or you can just search `ScribeAI` in search box.
 <p align="center">
-  <img src="./userSettings.png" />
+  <img src="./resources/userSettings.png" />
 </p>
 
 ### 🗝️ To find your OpenAI API key:
