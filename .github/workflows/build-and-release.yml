@@ -24,8 +24,12 @@ jobs:
     - name: Package Extension
       run: npx vsce package
 
+    - name: Extract Git Tag from Ref
+      id: get_version
+      run: echo "##[set-output name=version;]$(echo ${GITHUB_REF#refs/tags/v})"
+
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          scribeai.vsix
+          scribeai-${{ steps.get_version.outputs.version }}.vsix
