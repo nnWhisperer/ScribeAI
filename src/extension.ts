@@ -325,7 +325,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		} else {
 			prompt = await generatePromptV1(question, thread);
 		}
-		const humanComment = new NoteComment(new vscode.MarkdownString(question), vscode.CommentMode.Preview, { name: 'VS Code', iconPath: vscode.Uri.parse("https://img.icons8.com/fluency/96/null/user-male-circle.png") }, thread, thread.comments.length ? 'canDelete' : undefined);
+		const humanComment = new NoteComment(new vscode.MarkdownString(question), vscode.CommentMode.Preview, { name: 'VS Code', iconPath: vscode.Uri.parse("(account)") }, thread, thread.comments.length ? 'canDelete' : undefined);
 		thread.comments = [...thread.comments, humanComment];
 		
 		// If openai is not initialized initialize it with existing API Key 
@@ -351,7 +351,7 @@ export async function activate(context: vscode.ExtensionContext) {
 			});
 
 			const responseText = response.data.choices[0].message?.content ? response.data.choices[0].message?.content : 'An error occured. Please try again...';
-			const AIComment = new NoteComment(new vscode.MarkdownString(responseText.trim()), vscode.CommentMode.Preview, { name: 'Scribe AI', iconPath: vscode.Uri.parse("https://img.icons8.com/fluency/96/null/chatbot.png") }, thread, thread.comments.length ? 'canDelete' : undefined);
+			const AIComment = new NoteComment(new vscode.MarkdownString(responseText.trim()), vscode.CommentMode.Preview, { name: 'Scribe AI', iconPath: vscode.Uri.parse("(hubot)") }, thread, thread.comments.length ? 'canDelete' : undefined);
 			thread.comments = [...thread.comments, AIComment];
 		} else {
 			const response = await openai.createCompletion({
@@ -367,7 +367,7 @@ export async function activate(context: vscode.ExtensionContext) {
 			});
 
 			const responseText = response.data.choices[0].text ? response.data.choices[0].text : 'An error occured. Please try again...';
-			const AIComment = new NoteComment(new vscode.MarkdownString(responseText.trim()), vscode.CommentMode.Preview, { name: 'Scribe AI', iconPath: vscode.Uri.parse("https://img.icons8.com/fluency/96/null/chatbot.png") }, thread, thread.comments.length ? 'canDelete' : undefined);
+			const AIComment = new NoteComment(new vscode.MarkdownString(responseText.trim()), vscode.CommentMode.Preview, { name: 'Scribe AI', iconPath: vscode.Uri.parse("(hubot)") }, thread, thread.comments.length ? 'canDelete' : undefined);
 			thread.comments = [...thread.comments, AIComment];
 		}
 	}
@@ -423,7 +423,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	 */
 	function replyNote(reply: vscode.CommentReply) {
 		const thread = reply.thread;
-		const newComment = new NoteComment(new vscode.MarkdownString(reply.text), vscode.CommentMode.Preview, { name: 'VS Code', iconPath: vscode.Uri.parse("https://img.icons8.com/fluency/96/null/user-male-circle.png") }, thread, thread.comments.length ? 'canDelete' : undefined);
+		const newComment = new NoteComment(new vscode.MarkdownString(reply.text), vscode.CommentMode.Preview, { name: 'VS Code', iconPath: vscode.Uri.parse("(account)") }, thread, thread.comments.length ? 'canDelete' : undefined);
 		newComment.label = 'NOTE';
 		thread.comments = [...thread.comments, newComment];
 	}
