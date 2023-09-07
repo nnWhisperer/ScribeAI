@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Get release
+      id: get_release
+      uses: bruceadams/get-release@v1.3.2
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+
     - name: Checkout code
       uses: actions/checkout@v2
 
@@ -26,7 +32,7 @@ jobs:
     - name: Create GitHub Release and Upload VSIX
       uses: actions/upload-release-asset@v1
       with:
-        upload_url: ${{ github.event.release.upload_url }}
+        upload_url: ${{ steps.get_release.outputs.upload_url }}
         asset_path: ./scribeai.vsix
         asset_name: scribeai.vsix
         asset_content_type: application/octet-stream
